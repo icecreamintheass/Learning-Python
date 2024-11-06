@@ -1,6 +1,6 @@
 def find_first_index(item_list, item_to_find):
-    for index in range(len(item_list)):
-        if item_list[index] == item_to_find:
+    for index, item in enumerate(item_list):
+        if item == item_to_find:
             return index
     return None
 
@@ -12,6 +12,6 @@ for find_item in ['банан', 'груша', 'персик']:
     index_item = find_first_index(items_list, find_item)
 
     if index_item is not None:
-        print("Первое вхождение товара '" + find_item + "' имеет индекс " + str(index_item) + ".")
+        print(f"Первое вхождение товара '{find_item}' имеет индекс {index_item}.")
     else:
-        print("Товар '" + find_item + "' не найден в списке.")
+        print(f"Товар '{find_item}' не найден в списке.")
