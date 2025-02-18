@@ -14,6 +14,10 @@ class Animal:
         """Строковое представление животного."""
         return f"{self.name}, возраст {self.age} лет."
 
+    def __repr__(self):
+        """Машинное представление объекта."""
+        return f"Animal(name='{self.name}', age={self.age})"
+
 
 class Cat(Animal):
     """Класс, представляющий кота."""
@@ -31,8 +35,13 @@ class Cat(Animal):
         """Добавляем информацию о породе в описание кота."""
         return f"{self.name}, порода {self.breed}, возраст {self.age} лет."
 
+    def __repr__(self):
+        """Машинное представление кота."""
+        return f"Cat(name='{self.name}', age={self.age}, breed='{self.breed}')"
+
 
 if __name__ == "__main__":
     cat = Cat("Левик", 5, "Перс")
     print(cat)
     print(cat.make_sound())
+    print(repr(cat))  # Проверка метода __repr__
